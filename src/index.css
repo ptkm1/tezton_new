@@ -2,13 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
-  font-family: 'Product Sans', sans-serif;
-  font-family: 'Product Sans Thin', sans-serif;
-  font-family: 'Product Sans Light', sans-serif;
-  font-family: 'Product Sans Medium', sans-serif;
-  font-family: 'Product Sans Black', sans-serif;
+  font-family: "Product Sans", sans-serif;
+  font-family: "Product Sans Thin", sans-serif;
+  font-family: "Product Sans Light", sans-serif;
+  font-family: "Product Sans Medium", sans-serif;
+  font-family: "Product Sans Black", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 

@@ -1,11 +1,12 @@
-import { useParams } from "react-router-dom"
-import { Calendar } from "../design/components/calendar"
-import { AppTemplate } from "../design/templates/app.template"
-import { TabsDeliveries } from "../design/components/tabs-deliveries"
+import { useParams } from "react-router-dom";
+import { Calendar } from "../design/components/calendar";
+import { TabsDeliveries } from "../design/components/tabs-deliveries";
+import { AppTemplate } from "../design/templates/app.template";
 
 export const CompanyScreen = () => {
+  const { company_id } = useParams();
 
-  const { company_id } = useParams()
+  console.log(company_id);
 
   return (
     <AppTemplate>
@@ -16,5 +17,5 @@ export const CompanyScreen = () => {
         </div>
       </div>
     </AppTemplate>
-  )
-}
+  );
+};

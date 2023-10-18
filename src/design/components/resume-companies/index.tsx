@@ -9,7 +9,7 @@ export const ResumeCompanies = ({ onSelectStatus }: any) => {
   const COMPANIES = MOCK_USER.companies;
 
   const productsStatus: any = extractFeatureStatus(MOCK_USER);
-  const [progress, setProgress] = useState(13);
+  const [progress] = useState(13);
 
   return (
     <div className="w-full">

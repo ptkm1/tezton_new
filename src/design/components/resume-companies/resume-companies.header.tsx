@@ -4,7 +4,6 @@ export const ResumeCompaniesHeader = ({
   company_logo,
   company_name,
   products,
-  idx,
 }: any) => {
   function getUsers() {
     let project: any = [];
@@ -20,11 +19,11 @@ export const ResumeCompaniesHeader = ({
     return users.flat();
   }
 
-  function getProjects() {
-    let projects: any = [];
-    products.map((product: any) => projects.push(product.projects));
-    return projects.flat();
-  }
+  // function getProjects() {
+  //   let projects: any = [];
+  //   products.map((product: any) => projects.push(product.projects));
+  //   return projects.flat();
+  // }
 
   const STATUS = [
     { status_name: "Sucesso" },

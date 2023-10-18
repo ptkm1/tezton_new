@@ -4,11 +4,11 @@ import { CompanyProduct, Project } from "../../../types/user_mocks";
 import { ContextMenu } from "../dropdown-menu";
 
 export const SubMenu = () => {
-  const PRODUCTS: CompanyProduct[] = MOCK_USER.companies
+  const PRODUCTS: CompanyProduct[] | any = MOCK_USER.companies
     .map((company) => company.company_products)
     .flat();
   const PROJECTS: Project[] = PRODUCTS.map(
-    (product) => product?.projects
+    (product: any) => product?.projects
   ).flat();
 
   return (

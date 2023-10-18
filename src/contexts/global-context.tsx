@@ -1,15 +1,7 @@
-import { createContext } from "react";
+import { PropsWithChildren, createContext } from "react";
 
-export const GlobalContext = createContext({} as any)
+export const GlobalContext = createContext({} as any);
 
-
-export default function GlobalProvider({ children }) {
-
-
-
-  return (
-    <GlobalContext.Provider value={{}}>
-      {children}
-    </GlobalContext.Provider>
-  )
+export default function GlobalProvider({ children }: PropsWithChildren) {
+  return <GlobalContext.Provider value={{}}>{children}</GlobalContext.Provider>;
 }

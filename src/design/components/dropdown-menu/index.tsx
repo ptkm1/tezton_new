@@ -14,19 +14,19 @@ export const ContextMenu = () => {
     { id: 3, label: "Deletar", icon: TrashIcon },
   ];
 
-  function handleExecute(id: number) {
-    switch (id) {
-      case 1:
-        alert("Criar");
-        break;
-      case 2:
-        alert("Atualizar");
-        break;
-      case 3:
-        alert("Deletar");
-        break;
-    }
-  }
+  // function handleExecute(id: number) {
+  //   switch (id) {
+  //     case 1:
+  //       alert("Criar");
+  //       break;
+  //     case 2:
+  //       alert("Atualizar");
+  //       break;
+  //     case 3:
+  //       alert("Deletar");
+  //       break;
+  //   }
+  // }
 
   return (
     <DropdownMenu.Root>
@@ -37,7 +37,7 @@ export const ContextMenu = () => {
         {ITEMS.map(({ id, label, icon: Icon }) => (
           <DropdownMenu.Item
             // onClick={() => handleExecute(id)}
-            key={label}
+            key={label + id}
             className="w-full h-7 flex justify-between items-center gap-2 hover:bg-primary px-2 py-3"
           >
             <Dialog Trigger={<Icon size={14} />} />

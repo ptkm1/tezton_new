@@ -5,7 +5,7 @@ export const Dialog = ({
   title = "Titulo",
   description = "Descrição",
   Trigger,
-}) => {
+}: any) => {
   return (
     <DialogRadix.Root>
       <DialogRadix.Trigger asChild>{Trigger}</DialogRadix.Trigger>

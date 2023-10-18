@@ -275,29 +275,45 @@ export const MOCK_USER: Root = {
 
 //FUNCTION extract
 
-export function extractFeatureStatus(user) {
-  const productStatus = {};
+export function extractFeatureStatus(user: {
+  user_id?: string;
+  user_name?: string;
+  user_email?: string;
+  user_photo?: string;
+  companies: any;
+}) {
+  const productStatus: any = {};
 
-  user.companies.forEach((company) => {
-    company.company_products.forEach((product) => {
-      productStatus[product.product_name] = [];
+  user.companies.forEach(
+    (company: {
+      company_products: { product_name: string | number; projects: any[] }[];
+    }) => {
+      company.company_products.forEach(
+        (product: { product_name: string | number; projects: any[] }) => {
+          productStatus[product?.product_name] = [];
 
-      product.projects.forEach((project) => {
-        project.features?.forEach((feature) => {
-          const featureStatus = feature.deliveries.map((delivery) => ({
-            feature_name: feature.feature_name,
-            delivery_name: delivery.delivery_name,
-            status: delivery.status,
-          }));
+          product.projects.forEach((project: any) => {
+            project.features?.forEach(
+              (feature: { deliveries: any[]; feature_name: any }) => {
+                const featureStatus = feature.deliveries.map(
+                  (delivery: { delivery_name: any; status: any }) => ({
+                    feature_name: feature.feature_name,
+                    delivery_name: delivery.delivery_name,
+                    status: delivery.status,
+                  })
+                );
 
-          productStatus[product.product_name] = [
-            ...productStatus[product.product_name],
-            ...featureStatus,
-          ];
-        });
-      });
-    });
-  });
+                productStatus[product.product_name] = [
+                  ...productStatus[product.product_name],
+                  ...featureStatus,
+                ];
+              }
+            );
+          });
+        }
+      );
+    }
+  );
 
   return productStatus;
 }
