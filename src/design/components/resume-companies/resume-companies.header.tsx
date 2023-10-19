@@ -19,12 +19,6 @@ export const ResumeCompaniesHeader = ({
     return users.flat();
   }
 
-  // function getProjects() {
-  //   let projects: any = [];
-  //   products.map((product: any) => projects.push(product.projects));
-  //   return projects.flat();
-  // }
-
   const STATUS = [
     { status_name: "Sucesso" },
     { status_name: "Falhas" },
@@ -37,7 +31,9 @@ export const ResumeCompaniesHeader = ({
       <div className="w-[60%] flex justify-between">
         <div className="w-[50%] flex justify-start items-center gap-2 whitespace-nowrap overflow-hidden">
           <img src={company_logo} alt={company_name} width={30} />
-          <span className="text-base text-clip">{company_name}</span>
+          <span className="text-base text-clip text-[#fff]">
+            {company_name}
+          </span>
         </div>
         <div className="w-28 flex justify-end gap-2 items-center overflow-hidden">
           {getUsers().map(
@@ -60,7 +56,7 @@ export const ResumeCompaniesHeader = ({
         {STATUS.map((status: { status_name: string }) => (
           <div
             key={status.status_name}
-            className="w-full flex items-center justify-center text-xs"
+            className="w-full flex items-center justify-center text-xs text-[#fff]"
           >
             {status.status_name}
           </div>

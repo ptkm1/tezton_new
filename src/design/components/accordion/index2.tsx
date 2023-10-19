@@ -1,8 +1,6 @@
 export const Accordion = () => {
   return (
-    <div className="border border-default">
-
-
+    <div className="border border-default dark:border-defaultdark">
       <div className="relative mb-3">
         <h6 className="mb-0">
           <button
@@ -13,7 +11,6 @@ export const Accordion = () => {
           </button>
         </h6>
 
-
         <div
           data-collapse="collapse-1"
           className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
@@ -23,8 +20,6 @@ export const Accordion = () => {
           </div>
         </div>
       </div>
-
-
     </div>
-  )
-}
+  );
+};

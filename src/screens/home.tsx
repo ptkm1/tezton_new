@@ -65,12 +65,12 @@ export const HomeScreen = () => {
                   <CardResume />
                 ))}
               </div>
-              <div className="w-full flex flex-col border gap-3 border-default p-4">
+              <div className="w-full flex flex-col border gap-3 border-default dark:border-defaultdark p-4">
                 {COMMENTS.comments.map((comment) => (
                   <div className="w-full flex flex-col">
                     <div
                       key={comment.id}
-                      className="w-full flex items-center gap-2 border border-default p-4 rounded-t-lg"
+                      className="w-full flex items-center gap-2 border border-default dark:border-defaultdark p-4 rounded-t-lg"
                     >
                       <div className="w-7 h-7 min-h-[28px] min-w-[28px] border flex items-center justify-center rounded-full">
                         <User2Icon size={16} />

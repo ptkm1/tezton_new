@@ -18,10 +18,10 @@ export const EditNameCompany = ({ value }: any) => {
         type="text"
         {...register("nome")}
         value={value}
-        className="w-full h-8 pl-2 rounded border border-default bg-foreground"
+        className="w-full h-8 pl-2 rounded border border-default dark:border-defaultdark bg-foreground"
       />
       <DialogRadix.Close
-        className="border border-default rounded-md hover:bg-primary"
+        className="border border-default dark:border-defaultdark rounded-md hover:bg-primary"
         type="submit"
       >
         Salvar

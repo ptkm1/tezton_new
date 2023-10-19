@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -7,14 +8,20 @@ export default {
   theme: {
     colors: {
       primary: "rgb(150, 162, 242)",
-      foreground: "#232323",
+      darkForeground: "#232323",
+      background: "#f8f9fa",
+      backgroundDark: "#242424",
+      foreground: "#F8F9FF",
+      textWhite: "#fff",
+      textLight: "#6f6f6f"
     },
     extend: {
       borderRadius: {
         default: 8,
       },
       borderColor: {
-        default: "#2e2e2e",
+        defaultdark: "#2e2e2e",
+        default: "#e6e8eb"
       },
       keyframes: {
         slideDown: {

@@ -96,7 +96,6 @@ export const Board = () => {
       defaultEdgeOptions={edgeOptions}
       nodeTypes={nodeTypes}
       nodes={json}
-      style={{ backgroundColor: "#f6f8fa" }}
       connectionLineStyle={connectionLineStyle}
     >
       <Controls />
