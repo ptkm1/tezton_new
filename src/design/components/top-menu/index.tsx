@@ -1,7 +1,6 @@
 import { AppleIcon, ComputerIcon, Smartphone, User2Icon } from "lucide-react";
 import { Fragment, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ContextMenu } from "../dropdown-menu";
 
 export const TopMenu = () => {
   const PLATFORMS = [
