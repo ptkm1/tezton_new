@@ -22,11 +22,11 @@ NodeProps) {
   console.log(data);
 
   const status_icons = [
-    { icon: <ActivitySquare />, value: "active" },
-    { icon: <DeleteIcon />, value: "deleted" },
-    { icon: <CheckCheckIcon />, value: "completed" },
-    { icon: <ListStartIcon />, value: "initialized" },
-    { icon: <PanelTopInactive />, value: "inactive" },
+    { icon: <ActivitySquare size={13} />, value: "active" },
+    { icon: <DeleteIcon size={13} />, value: "deleted" },
+    { icon: <CheckCheckIcon size={13} />, value: "completed" },
+    { icon: <ListStartIcon size={13} />, value: "initialized" },
+    { icon: <PanelTopInactive size={13} />, value: "inactive" },
   ];
 
   let idx =
@@ -44,10 +44,7 @@ NodeProps) {
         onChange={onChange}
       />
       <div className="w-[150px] h-16 rounded bg-[#fff] flex items-center justify-center">
-        <div className="icons-status-hover:visible absolute top-0 right-0">
-          {currentIcon?.icon || "b"}
-        </div>
-        <div className="hidden icons-status -right-[65px] -top-[15px] w-max justify-center items-center gap-[2%] rounded bg-foreground p-1 hover:flex">
+        <div className="group hidden w-max justify-center items-center gap-[2%] rounded bg-foreground p-1 hover:flex">
           {status_icons.map((status) => (
             <button
               className="border-none bg-[transparent] w-max h-max p-[1px] cursor-pointer flex items-center justify-center hover:bg-primary"
@@ -57,6 +54,9 @@ NodeProps) {
               {status.icon || "a"}
             </button>
           ))}
+        </div>
+        <div className="group-hover:visible absolute top-0 right-0 text-primary">
+          {currentIcon?.icon || "b"}
         </div>
         <span className="text-xs text-[#000]">{data?.text}</span>
       </div>
