@@ -91,11 +91,11 @@ export const useCalendar = () => {
   var calendarData = getCalendarData();
 
   // Exemplo de como acessar os dados do calendário
-  calendarData.forEach(function (monthData) {
-    monthData.days.forEach(function (day: any) {
-      console.log(day.toDateString());
-    });
-  });
+  // calendarData.forEach(function (monthData) {
+  //   monthData.days.forEach(function (day: any) {
+  //     console.log(day.toDateString());
+  //   });
+  // });
 
   // // Função para criar a timeline com as horas
   // function createTimeline() {

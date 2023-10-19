@@ -1,3 +1,4 @@
+import { Board } from "../design/components/react-flow/index";
 import { TabsDeliveries } from "../design/components/tabs-deliveries";
 import { AppTemplate } from "../design/templates/app.template";
 
@@ -14,7 +15,9 @@ export const DeliveryScreen = () => {
             className="rounded-xl overflow-hidden"
           />
         </div>
-        <div className="w-full border border-default rounded-md p-1">Board</div>
+        <div className="w-full border border-default rounded-md p-1">
+          <Board />
+        </div>
         <div className="w-[200px] border border-default rounded-md p-1">
           <TabsDeliveries />
         </div>

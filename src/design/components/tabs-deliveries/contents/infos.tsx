@@ -19,14 +19,21 @@ export const InfoContent = () => {
   return (
     <div className="w-full flex flex-col gap-2">
       {MockInformations.map((prop) => (
-        <div className="w-full flex flex-col">
+        <div key={prop.label + prop.value} className="w-full flex flex-col">
           <div className="text-sm">{prop.label}</div>
           {prop.value.length > 1 && <div className="text-xs">{prop.value}</div>}
           {prop.channels && (
             <div className="w-full flex flex-wrap flex-1 gap-1">
               {prop.channels.map((ch) => (
-                <div className="text-xs flex items-center gap-1 w-20">
-                  <input type="checkbox" checked={ch.value} />
+                <div
+                  key={ch.label + ch.value}
+                  className="text-xs flex items-center gap-1 w-20"
+                >
+                  <input
+                    type="checkbox"
+                    checked={ch.value}
+                    onChange={() => {}}
+                  />
                   {ch.label}
                 </div>
               ))}

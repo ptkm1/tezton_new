@@ -19,7 +19,7 @@ export const ResumeCompanies = ({ onSelectStatus }: any) => {
             key={company.company_id}
             value={company.company_id + idx}
           >
-            <Accordion.Trigger className="w-full">
+            <Accordion.Trigger className="w-full mb-1">
               <ResumeCompaniesHeader
                 company_name={company.company_name}
                 company_logo={company.company_logo}
@@ -69,7 +69,7 @@ export const ResumeCompanies = ({ onSelectStatus }: any) => {
                             onClick={() =>
                               onSelectStatus({ ...statusName, ...product })
                             }
-                            className="w-full flex items-center justify-center border"
+                            className="w-full flex items-center justify-center"
                           >
                             {statusName.value}
                           </div>

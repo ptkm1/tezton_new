@@ -26,6 +26,11 @@ export type Root = {
           deliveries: Array<{
             delivery_id: string;
             delivery_name: string;
+            step?: string;
+            event?: {
+              start: any;
+              end: any;
+            };
             status?: Array<{
               status_name: string;
               value: number;
@@ -66,6 +71,11 @@ export const MOCK_USER: Root = {
                     {
                       delivery_id: "E1EcGHzb1e",
                       delivery_name: "entrega 1",
+                      step: "Produção",
+                      event: {
+                        start: new Date(2023, 9, 23),
+                        end: new Date(2023, 9, 27),
+                      },
                       status: [
                         { status_name: "Sucesso", value: 0 },
                         { status_name: "Falhas", value: 0 },
@@ -76,6 +86,11 @@ export const MOCK_USER: Root = {
                     {
                       delivery_id: "VJajzBGW1l",
                       delivery_name: "entrega 2",
+                      step: "Homologação",
+                      event: {
+                        start: new Date(2023, 9, 23),
+                        end: new Date(2023, 9, 27),
+                      },
                       status: [
                         { status_name: "Sucesso", value: 0 },
                         { status_name: "Falhas", value: 0 },
@@ -92,6 +107,11 @@ export const MOCK_USER: Root = {
                     {
                       delivery_id: "E1223b1e",
                       delivery_name: "entrega 12",
+                      step: "Ideação",
+                      event: {
+                        start: new Date(2023, 9, 23),
+                        end: new Date(2023, 9, 27),
+                      },
                       status: [
                         { status_name: "Sucesso", value: 0 },
                         { status_name: "Falhas", value: 0 },
@@ -102,6 +122,11 @@ export const MOCK_USER: Root = {
                     {
                       delivery_id: "VJ557zBGW1l",
                       delivery_name: "entrega 25",
+                      step: "Ideação",
+                      event: {
+                        start: new Date(2023, 8, 10),
+                        end: new Date(2023, 8, 18),
+                      },
                       status: [
                         { status_name: "Sucesso", value: 0 },
                         { status_name: "Falhas", value: 0 },

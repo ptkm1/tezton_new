@@ -19,6 +19,7 @@ export const TabsDeliveries = () => {
         <div className="w-full flex gap-1">
           {MockTriggers.map((tabs) => (
             <Tabs.Trigger
+              key={tabs.id}
               className={`text-xs justify-between border border-default rounded w-full p-1 data-[state=active]:bg-primary`}
               value={tabs.id.toString()}
             >
@@ -27,7 +28,11 @@ export const TabsDeliveries = () => {
           ))}
         </div>
         {MockTriggers.map((tabs) => (
-          <Tabs.Content className="w-full p-2" value={tabs.id.toString()}>
+          <Tabs.Content
+            key={tabs.id}
+            className="w-full p-2"
+            value={tabs.id.toString()}
+          >
             {tabs.content}
           </Tabs.Content>
         ))}

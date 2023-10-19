@@ -1,14 +1,15 @@
-import { PropsWithChildren } from "react"
-
+import { PropsWithChildren } from "react";
 
 interface AccordionContentProps {
-  children: PropsWithChildren | any
-  collapseTarget: string
-  customContent?: any
+  children: PropsWithChildren | any;
+  collapseTarget: string;
+  customContent?: any;
 }
 
-export const AccordionContent = ({ children, collapseTarget, customContent }: AccordionContentProps) => {
-  console.log(customContent)
+export const AccordionContent = ({
+  children,
+  collapseTarget,
+}: AccordionContentProps) => {
   return (
     <div
       data-collapse={collapseTarget}
@@ -18,5 +19,5 @@ export const AccordionContent = ({ children, collapseTarget, customContent }: Ac
         {children}
       </div>
     </div>
-  )
-}
+  );
+};

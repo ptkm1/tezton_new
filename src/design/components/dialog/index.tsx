@@ -5,6 +5,7 @@ export const Dialog = ({
   title = "Titulo",
   description = "Descrição",
   Trigger,
+  Content,
 }: any) => {
   return (
     <DialogRadix.Root>
@@ -18,13 +19,7 @@ export const Dialog = ({
           <DialogRadix.Description className="mt-[10px] mb-5 text-[15px] leading-normal">
             {description}
           </DialogRadix.Description>
-          <div className="mt-[25px] flex justify-end">
-            <DialogRadix.Close asChild>
-              <button className="border border-default hover:bg-primary focus:shadow-green7 inline-flex h-[35px] items-center justify-center rounded-[4px] px-[15px] font-medium leading-none focus:shadow-[0_0_0_2px] focus:outline-none">
-                Save changes
-              </button>
-            </DialogRadix.Close>
-          </div>
+          <Content />
           <DialogRadix.Close asChild>
             <button
               className="text-violet11 hover:bg-violet4 focus:shadow-violet7 absolute top-[10px] right-[10px] inline-flex h-[25px] w-[25px] appearance-none items-center justify-center rounded-full focus:shadow-[0_0_0_2px] focus:outline-none"

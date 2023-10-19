@@ -12,7 +12,10 @@ export const ReportsContent = () => {
       <div className="w-full flex flex-col">
         <span className="text-md">0/0</span>
         {STATUS.map((status) => (
-          <div className="border-b border-t border-default w-full flex flex-col">
+          <div
+            key={status.status_name}
+            className="border-b border-t border-default w-full flex flex-col"
+          >
             <span className="text-base">{status.status_name}</span>
             <span className="text-sm">{status.value}</span>
           </div>
