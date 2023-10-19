@@ -9,13 +9,13 @@ export const LeftMenu = () => {
   );
 
   return (
-    <div className="w-14 h-screen border-r border-default flex flex-col">
+    <div className="w-14 h-screen border-r border-default dark:border-defaultdark flex flex-col justify-between">
       <img
         src={
           findSpecificCompany?.company_logo ||
           "https://t31184413.p.clickup-attachments.com/t31184413/b03451bb-819c-4719-a6fe-0a2f759551ef/isotipo_png.png"
         }
-        className="w-14 h-14 min-h-[54px] min-w-[54px] p-3 border-b border-default flex items-center justify-center"
+        className="w-14 h-14 min-h-[54px] min-w-[54px] p-3 border-b border-default dark:border-defaultdark flex items-center justify-center"
       />
       <div className="w-full flex flex-col justify-center items-center gap-2 mt-3">
         <div className="w-full flex flex-col justify-center items-center gap-2 mt-3">

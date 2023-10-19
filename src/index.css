@@ -9,11 +9,12 @@
   font-family: "Product Sans Medium", sans-serif;
   font-family: "Product Sans Black", sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 300;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  /** color: rgba(255, 255, 255, 0.87);
+   background-color: #242424;**/
+
+  background-color: #fff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -26,6 +27,7 @@
   box-sizing: border-box;
   padding: 0px;
   margin: 0px;
+  font-family: "Product Sans Medium", sans-serif;
 }
 
 .bullet {

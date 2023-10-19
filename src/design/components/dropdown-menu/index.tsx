@@ -33,7 +33,7 @@ export const ContextMenu = () => {
       <DropdownMenu.Trigger>
         <MoreVerticalIcon size={16} />
       </DropdownMenu.Trigger>
-      <DropdownMenu.Content className="bg-foreground flex flex-col w-max max-w-[250px] gap-2 border border-default rounded-md overflow-hidden shadow-md drop-shadow-lg">
+      <DropdownMenu.Content className="bg-foreground flex flex-col w-max max-w-[250px] gap-2 border border-default dark:border-defaultdark rounded-md overflow-hidden shadow-md drop-shadow-lg">
         {ITEMS.map(({ id, label, icon: Icon }) => (
           <DropdownMenu.Item
             // onClick={() => handleExecute(id)}

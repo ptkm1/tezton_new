@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { CompanyScreen } from "./screens/company";
 import { DeliveryScreen } from "./screens/delivery";
 import { HomeScreen } from "./screens/home";
+import { ProductScreen } from "./screens/product";
 
 export const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "company/:company_id/product/:product_id",
-    element: <CompanyScreen />,
+    element: <ProductScreen />,
   },
   {
     path: "company/:company_id/delivery/:delivery_id",

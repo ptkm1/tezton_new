@@ -14,7 +14,7 @@ export const ReportsContent = () => {
         {STATUS.map((status) => (
           <div
             key={status.status_name}
-            className="border-b border-t border-default w-full flex flex-col"
+            className="border-b border-t border-default dark:border-defaultdark w-full flex flex-col"
           >
             <span className="text-base">{status.status_name}</span>
             <span className="text-sm">{status.value}</span>

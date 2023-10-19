@@ -20,7 +20,7 @@ export const TabsDeliveries = () => {
           {MockTriggers.map((tabs) => (
             <Tabs.Trigger
               key={tabs.id}
-              className={`text-xs justify-between border border-default rounded w-full p-1 data-[state=active]:bg-primary`}
+              className={`text-xs justify-between border border-default dark:border-defaultdark rounded w-full p-1 data-[state=active]:bg-primary`}
               value={tabs.id.toString()}
             >
               {tabs.label}

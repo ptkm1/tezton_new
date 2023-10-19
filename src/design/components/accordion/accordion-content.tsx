@@ -15,7 +15,7 @@ export const AccordionContent = ({
       data-collapse={collapseTarget}
       className="h-0 overflow-hidden transition-all duration-300 ease-in-out"
     >
-      <div className="p-4 h-max border border-default text-sm leading-normal text-blue-gray-500/80">
+      <div className="p-4 h-max border border-default dark:border-defaultdark text-sm leading-normal text-blue-gray-500/80">
         {children}
       </div>
     </div>

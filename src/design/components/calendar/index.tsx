@@ -32,10 +32,12 @@ export const Calendar = () => {
       const minutes = now.getMinutes();
       const totalMinutes = hours * 60 + minutes;
 
-      const calendar = bullet.parentElement;
-      const calendarWidth = calendar.offsetWidth;
+      const calendar = bullet?.parentElement;
+      const calendarWidth = calendar?.offsetWidth;
       const bulletWidth = (calendarWidth / (24 * 60)) * totalMinutes;
-      bullet.style.width = `${bulletWidth}px`;
+      if (bullet) {
+        bullet.style.width = `${bulletWidth}px`;
+      }
     };
 
     // Atualize a posição do bullet inicialmente
@@ -53,12 +55,12 @@ export const Calendar = () => {
   const [opened, setOpened] = useState(0);
 
   return (
-    <div className="w-full h-full overflow-x-scroll scroll-smooth rounded-lg flex border border-default bg-foreground">
+    <div className="w-full h-full overflow-x-scroll scroll-smooth rounded-lg flex border border-default dark:border-defaultdark bg-foreground dark:bg-darkForeground">
       {calendarData.map((calendar, idx_calendarData) => (
         <Fragment key={idx_calendarData.toString()}>
           {idx_calendarData <= 0 && (
-            <div className="flex flex-col min-w-[300px] w-[300px] border-r border-default">
-              <div className="flex items-center justify-center h-[97px] border-b-default border-b">
+            <div className="flex flex-col min-w-[300px] w-[300px] border-r border-default dark:border-defaultdark">
+              <div className="flex items-center justify-center h-[97px] border-b-default dark:border-defaultdark border-b">
                 {selectedFeature?.feature_name}
               </div>
               <div className="flex w-full flex-col">
@@ -66,7 +68,7 @@ export const Calendar = () => {
                   (delivery: any, idx_delivery: any) => (
                     <div
                       key={delivery.delivery_name + idx_delivery.toString()}
-                      className="w-full flex border-b-default border-b items-center justify-start"
+                      className="w-full flex border-b-default border-b dark:border-defaultdark items-center justify-start"
                       onClick={() => setOpened(idx_delivery)}
                       style={{ height: idx_delivery === opened ? 106 : 56 }}
                     >
@@ -75,7 +77,7 @@ export const Calendar = () => {
                         <div className="w-max flex">
                           {[1, 2, 3].map(() => (
                             <img
-                              className="w-6 h-6 border border-default rounded-full -mr-3"
+                              className="w-6 h-6 border border-default dark:border-defaultdark rounded-full -mr-3"
                               src="https://img.freepik.com/vetores-premium/avatar-icon002_750950-52.jpg"
                             />
                           ))}
@@ -98,14 +100,14 @@ export const Calendar = () => {
             </div>
           )}
           <div className="w-max flex flex-col">
-            <div className="w-full flex items-center justify-center h-14 border-r-default border-r">
+            <div className="w-full flex items-center justify-center h-14 border-r-default border-r dark:border-defaultdark">
               {calendar.month}
             </div>
-            <div className="w-full flex border-b-default border-r-default border-b border-r text-xs">
+            <div className="w-full flex border-b-default border-r-default dark:border-defaultdark border-b border-r text-xs">
               {calendar.days.map((day: any, idx: any) => (
                 <div
                   key={day + idx}
-                  className="w-14 min-w-[56px] flex items-center justify-center text-xs border-r-default border-r last:border-r-0"
+                  className="w-14 min-w-[56px] flex items-center justify-center text-xs border-r-default dark:border-defaultdark border-r last:border-r-0"
                 >
                   <div className="w-10 h-10 flex items-center justify-center">
                     {format(day, "d")}
@@ -120,14 +122,14 @@ export const Calendar = () => {
                 return (
                   <div className="flex" key={delivery.label + idx_delivery}>
                     <div
-                      className="w-full flex border-b-default border-r-default border-b border-r text-xs"
+                      className="w-full flex border-b-default border-r-default dark:border-defaultdark border-b border-r text-xs"
                       onClick={() => setOpened(idx_delivery)}
                       style={{ height: idx_delivery === opened ? 106 : 56 }}
                     >
                       {calendar.days.map((day: any, idx_delivery: any) => (
                         <div
                           key={day + idx_delivery}
-                          className={`w-14 min-w-[56px] flex items-center justify-center text-xs border-r-default border-r last:border-r-0`}
+                          className={`w-14 min-w-[56px] flex items-center justify-center text-xs border-r-default dark:border-defaultdark border-r last:border-r-0`}
                           style={{ borderRight: "none" }}
                         >
                           {delivery.event &&
