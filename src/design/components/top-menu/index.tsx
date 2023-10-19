@@ -1,6 +1,7 @@
 import { AppleIcon, ComputerIcon, Smartphone, User2Icon } from "lucide-react";
 import { Fragment, useState } from "react";
 import { useParams } from "react-router-dom";
+import { ContextMenu } from "../dropdown-menu";
 
 export const TopMenu = () => {
   const PLATFORMS = [
@@ -65,7 +66,11 @@ export const TopMenu = () => {
       </div>
 
       <div className="w-full flex justify-end">
-        <User2Icon className="border rounded-full" strokeWidth={1} />
+        <button 
+          onClick={() => {}}
+        >
+          <User2Icon className="border rounded-full" strokeWidth={1} />
+        </button>
       </div>
     </div>
   );
