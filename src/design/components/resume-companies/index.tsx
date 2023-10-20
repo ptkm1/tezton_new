@@ -3,6 +3,7 @@ import { MOCK_USER, extractFeatureStatus } from "../../../mocks/user";
 import * as Accordion from "@radix-ui/react-accordion";
 import * as Progress from "@radix-ui/react-progress";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { ResumeCompaniesHeader } from "./resume-companies.header";
 
 export const ResumeCompanies = ({ onSelectStatus }: any) => {
@@ -35,21 +36,25 @@ export const ResumeCompanies = ({ onSelectStatus }: any) => {
                   className="flex w-full gap-3 mb-4"
                 >
                   <div className="flex flex-col justify-center w-[59%] gap-3">
-                    <div className="flex items-center gap-3 ">
-                      <img
-                        className="bg-primary rounded-md"
-                        src={product.product_logo}
-                        alt={product.product_name}
-                        width={40}
-                      />
-                      <span className="text-sm">{product.product_name}</span>
-                    </div>
-                    <Progress.Root className="w-full border border-default dark:border-defaultdark rounded-md h-2 overflow-hidden">
-                      <Progress.Indicator
-                        style={{ transform: `translateX(-${100 - progress}%)` }}
-                        className="w-full h-full bg-primary transition-transform duration-[660ms] ease-[cubic-bezier(0.65, 0, 0.35, 1)]"
-                      />
-                    </Progress.Root>
+                    <Link to={`company/${company.company_id}`}>
+                      <div className="flex items-center gap-3 ">
+                        <img
+                          className="bg-primary rounded-md"
+                          src={product.product_logo}
+                          alt={product.product_name}
+                          width={40}
+                        />
+                        <span className="text-sm">{product.product_name}</span>
+                      </div>
+                      <Progress.Root className="w-full border border-default dark:border-defaultdark rounded-md h-2 overflow-hidden">
+                        <Progress.Indicator
+                          style={{
+                            transform: `translateX(-${100 - progress}%)`,
+                          }}
+                          className="w-full h-full bg-primary transition-transform duration-[660ms] ease-[cubic-bezier(0.65, 0, 0.35, 1)]"
+                        />
+                      </Progress.Root>
+                    </Link>
                   </div>
                   <div className="w-[40%] flex items-center justify-between">
                     {productsStatus[product?.product_name]

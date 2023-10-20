@@ -7,6 +7,7 @@ import {
   startOfDay,
 } from "date-fns";
 import { Fragment, useContext, useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { GlobalContext } from "../../../contexts/global-context";
 import { useCalendar } from "./use-calendar";
 
@@ -66,34 +67,36 @@ export const Calendar = () => {
               <div className="flex w-full flex-col">
                 {selectedFeature?.deliveries?.map(
                   (delivery: any, idx_delivery: any) => (
-                    <div
-                      key={delivery.delivery_name + idx_delivery.toString()}
-                      className="w-full flex border-b-default border-b dark:border-defaultdark items-center justify-start"
-                      onClick={() => setOpened(idx_delivery)}
-                      style={{ height: idx_delivery === opened ? 106 : 56 }}
-                    >
-                      <div className="flex flex-col w-max p-2 gap-2">
-                        <span className="text-xs">Envolvidos</span>
-                        <div className="w-max flex">
-                          {[1, 2, 3].map(() => (
-                            <img
-                              className="w-6 h-6 border border-default dark:border-defaultdark rounded-full -mr-3"
-                              src="https://img.freepik.com/vetores-premium/avatar-icon002_750950-52.jpg"
-                            />
-                          ))}
+                    <Link to={`delivery/${delivery.delivery_id}`}>
+                      <div
+                        key={delivery.delivery_name + idx_delivery.toString()}
+                        className="w-full flex border-b-default border-b dark:border-defaultdark items-center justify-start"
+                        onClick={() => setOpened(idx_delivery)}
+                        style={{ height: idx_delivery === opened ? 106 : 56 }}
+                      >
+                        <div className="flex flex-col w-max p-2 gap-2">
+                          <span className="text-xs">Envolvidos</span>
+                          <div className="w-max flex">
+                            {[1, 2, 3].map(() => (
+                              <img
+                                className="w-6 h-6 border border-default dark:border-defaultdark rounded-full -mr-3"
+                                src="https://img.freepik.com/vetores-premium/avatar-icon002_750950-52.jpg"
+                              />
+                            ))}
+                          </div>
+                        </div>
+                        <div className="flex flex-col w-max p-2 gap-2">
+                          <span className="text-xs">Etapa</span>
+                          <span className="text-xs text-[gray]">
+                            {delivery.step}
+                          </span>
+                        </div>
+                        <div className="flex flex-col w-max p-2 gap-2">
+                          <span className="text-xs">Status da Etapa</span>
+                          <div className="text-xs text-[gray]">Executando</div>
                         </div>
                       </div>
-                      <div className="flex flex-col w-max p-2 gap-2">
-                        <span className="text-xs">Etapa</span>
-                        <span className="text-xs text-[gray]">
-                          {delivery.step}
-                        </span>
-                      </div>
-                      <div className="flex flex-col w-max p-2 gap-2">
-                        <span className="text-xs">Status da Etapa</span>
-                        <div className="text-xs text-[gray]">Executando</div>
-                      </div>
-                    </div>
+                    </Link>
                   )
                 )}
               </div>

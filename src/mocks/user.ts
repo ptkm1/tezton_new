@@ -52,13 +52,13 @@ export const MOCK_USER: Root = {
       company_id: "company1dokawp",
       company_name: "Empresa 1",
       company_logo:
-        "https://blog.adobe.com/en/publish/2020/05/28/media_1d87bf78b1ce19defbef0c7858b4df696215a4048.png?width=750&format=png&optimize=medium",
+        "https://pagamento.pefisa.com.br/static/media/logo.f8c1352f0616bdac7226.png",
       company_products: [
         {
           product_id: "kepo12k_",
           product_name: "Produto 1",
           product_logo:
-            "https://cdn-icons-png.flaticon.com/512/8676/8676496.png",
+            "https://raichu-uploads.s3.amazonaws.com/logo_cartao-top_GUc4sy.png",
           projects: [
             {
               project_id: "NkO_fHMWkl",
@@ -245,7 +245,7 @@ export const MOCK_USER: Root = {
       company_id: "company2dokawp",
       company_name: "Empresa 2",
       company_logo:
-        "https://www.marketscreener.com/static/instruments-logo-9668315",
+        "https://play-lh.googleusercontent.com/YzMebEoZk6lvKZHLv12qT1bx43_83zMHYI-z2kzAq9AbYbzPp0f2HkqlFuPzPuClCg",
       company_products: [
         {
           product_id: "238939kj",

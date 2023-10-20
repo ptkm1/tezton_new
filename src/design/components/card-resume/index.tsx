@@ -11,8 +11,10 @@ export const CardResume = ({ onPress }: any) => {
         a, eaque aut in asperiores excepturi numquam officia. Sint!
       </p>
       <div className="w-full flex justify-end">
-      <img 
-          src={'https://i1.sndcdn.com/artworks-rFvUaGN6YSuME7Aw-MyvseA-t500x500.jpg'}
+        <img
+          src={
+            "https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png"
+          }
           className="max-w-[30px] max-h-[30px] rounded-full overflow-hidden"
         />
       </div>

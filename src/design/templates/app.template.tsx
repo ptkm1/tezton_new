@@ -83,13 +83,13 @@ export const AppTemplate = ({ children }: React.PropsWithChildren) => {
                   <div className="invisible group-hover:visible absolute text-primary mt-[-30px] ml-[-30px]">
                     <DropdownMenu.Root>
                       <DropdownMenu.Trigger>
-                        <EditIcon />
+                        <EditIcon size={16} />
                       </DropdownMenu.Trigger>
                       <DropdownMenu.Content className="bg-foreground flex flex-col w-max max-w-[250px] gap-2 border border-default dark:border-defaultdark rounded-md overflow-hidden shadow-md drop-shadow-lg">
                         <DropdownMenu.Item className="w-full h-7 flex justify-between items-center gap-2 hover:bg-primary px-2 py-3">
                           <Plus size={20} />
                           <span className="flex justify-start w-full text-xs">
-                            test
+                            Criar
                           </span>
                         </DropdownMenu.Item>
                       </DropdownMenu.Content>
