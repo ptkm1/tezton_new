@@ -1,10 +1,13 @@
 import { useParams } from "react-router-dom";
+import { Calendar } from "../design/components/calendar";
 import { Board } from "../design/components/react-flow/index";
 import { TabsDeliveries } from "../design/components/tabs-deliveries";
 import { AppTemplate } from "../design/templates/app.template";
+import { useContext } from "react";
+import { GlobalContext } from "../contexts/global-context";
 
 export const DeliveryScreen = () => {
-  // const { selectedFeature } = useContext(GlobalContext);
+  const { selectedFeature } = useContext(GlobalContext);
 
   const { company_id, delivery_id } = useParams();
 
@@ -16,7 +19,7 @@ export const DeliveryScreen = () => {
   return (
     <AppTemplate>
       <div className="w-full grid grid-rows-[1fr,2fr] gap-4">
-        {/* {selectedFeature && <Calendar />} */}
+        {selectedFeature && <Calendar />}
         <div className="w-full h-full grid grid-cols-[max-content,2fr,max-content] gap-2 grid-rows-1">
           <div className="w-[200px] border border-default dark:border-defaultdark h-full rounded-md p-3 flex flex-col items-center justify-start gap-5">
             <span className="w-full text-sm border-b border-default dark:border-defaultdark pb-3">
