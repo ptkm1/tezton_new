@@ -1,6 +1,5 @@
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import {
-  Edit,
   EditIcon,
   HomeIcon,
   MoonIcon,

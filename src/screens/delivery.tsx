@@ -1,16 +1,14 @@
-import { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { GlobalContext } from "../contexts/global-context";
 import { Board } from "../design/components/react-flow/index";
 import { TabsDeliveries } from "../design/components/tabs-deliveries";
 import { AppTemplate } from "../design/templates/app.template";
 
 export const DeliveryScreen = () => {
-  const { selectedFeature } = useContext(GlobalContext);
+  // const { selectedFeature } = useContext(GlobalContext);
 
   const { company_id, delivery_id } = useParams();
 
-  console.log(delivery_id);
+  console.log(delivery_id, company_id);
 
   //  const findSpecificCompany = MOCK_USER.companies.find(company => company.company_id === company_id)
   //  const findSpecificDelivery = findSpecificCompany?.company_products.flatMap(product => product.)
