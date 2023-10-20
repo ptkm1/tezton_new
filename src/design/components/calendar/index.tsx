@@ -94,7 +94,7 @@ export const Calendar = () => {
                         </div>
                         <div className="flex flex-col w-max p-2 gap-2">
                           <span className="text-xs">Status da Etapa</span>
-                          <div className="text-xs text-[gray]">Executando</div>
+                          <div className="text-xs text-[gray]">Produção</div>
                         </div>
                       </div>
                     </Link>
