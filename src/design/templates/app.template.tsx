@@ -1,4 +1,12 @@
-import { HomeIcon, MoonIcon, PlusCircleIcon } from "lucide-react";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import {
+  Edit,
+  EditIcon,
+  HomeIcon,
+  MoonIcon,
+  Plus,
+  PlusCircleIcon,
+} from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { MOCK_USER } from "../../mocks/user";
 import { Dialog } from "../components/dialog";
@@ -71,9 +79,22 @@ export const AppTemplate = ({ children }: React.PropsWithChildren) => {
                 <Link
                   key={company.company_id}
                   to={`company/${company.company_id}`}
-                  className="flex items-center justify-center w-10 h-10 rounded-md hover:bg-[#e6e8eb] dark:hover:bg-[#2f2f2f] dark:text-[gray] overflow-hidden p-1 group"
+                  className="group flex items-center justify-center w-10 h-10 rounded-md hover:bg-[#e6e8eb] dark:hover:bg-[#2f2f2f] dark:text-[gray] overflow-hidden p-1 group"
                 >
                   <div className="invisible group-hover:visible absolute text-primary mt-[-30px] ml-[-30px]">
+                    <DropdownMenu.Root>
+                      <DropdownMenu.Trigger>
+                        <EditIcon />
+                      </DropdownMenu.Trigger>
+                      <DropdownMenu.Content className="bg-foreground flex flex-col w-max max-w-[250px] gap-2 border border-default dark:border-defaultdark rounded-md overflow-hidden shadow-md drop-shadow-lg">
+                        <DropdownMenu.Item className="w-full h-7 flex justify-between items-center gap-2 hover:bg-primary px-2 py-3">
+                          <Plus size={20} />
+                          <span className="flex justify-start w-full text-xs">
+                            test
+                          </span>
+                        </DropdownMenu.Item>
+                      </DropdownMenu.Content>
+                    </DropdownMenu.Root>
                     {/* <Dialog
                   title={`Editar ${company.company_name}`}
                   description={`Edite a ${company.company_name}`}

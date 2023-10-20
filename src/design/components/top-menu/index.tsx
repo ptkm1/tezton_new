@@ -1,4 +1,5 @@
-import { AppleIcon, ComputerIcon, Smartphone, User2Icon } from "lucide-react";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import { AppleIcon, ComputerIcon, Key, LogOutIcon, SettingsIcon, Smartphone, User2Icon } from "lucide-react";
 import { Fragment, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -15,6 +16,11 @@ export const TopMenu = () => {
     { label: "Desenvolvimento", value: "Desenvolvimento" },
     { label: "Homologação", value: "Homologação" },
     { label: "Produção", value: "Produção" },
+  ];
+
+  const STATS = [
+    { id: 1, label: "Configurações", icon: SettingsIcon },
+    { id: 2, label: "Deslogar", icon: LogOutIcon },
   ];
 
   const { company_id } = useParams();
@@ -66,12 +72,27 @@ export const TopMenu = () => {
         )}
       </div>
 
-      <div className="w-full flex justify-end">
-        <button 
-          onClick={() => {}}
-        >
-          <User2Icon className="border rounded-full" strokeWidth={1} />
-        </button>
+      <div className="w-full flex justify-end items-center gap-2">
+        <span>Nome</span>
+      <DropdownMenu.Root>
+        <DropdownMenu.Trigger>
+          <div className="max-w-[45px] max-h-[45px] rounded-full overflow-hidden">
+                <img src={'https://i1.sndcdn.com/artworks-rFvUaGN6YSuME7Aw-MyvseA-t500x500.jpg'}/>
+          </div>
+        </DropdownMenu.Trigger>
+        <DropdownMenu.Content className="bg-foreground flex flex-col w-max max-w-[250px] gap-2 border border-default dark:border-defaultdark rounded-md overflow-hidden shadow-md drop-shadow-lg">
+        {STATS.map(({id, label, icon: Icon}) => (
+
+            <DropdownMenu.Item
+              key={label + id}
+              className="w-full h-7 flex justify-between items-center gap-2 hover:bg-primary px-2 py-3"
+              >
+                <Icon size={20}/>
+                 <span className="flex justify-start w-full text-xs">{label}</span>
+            </DropdownMenu.Item>
+        ))}
+      </DropdownMenu.Content>
+  </DropdownMenu.Root>
       </div>
     </div>
   );

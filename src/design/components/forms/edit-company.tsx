@@ -20,12 +20,9 @@ export const EditNameCompany = ({ value }: any) => {
         value={value}
         className="w-full h-8 pl-2 rounded border border-default dark:border-defaultdark bg-foreground"
       />
-      <DialogRadix.Close
-        className="border border-default dark:border-defaultdark rounded-md hover:bg-primary"
-        type="submit"
-      >
+      <button type="submit">
         Salvar
-      </DialogRadix.Close>
+      </button>
     </form>
   );
 };
