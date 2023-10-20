@@ -79,13 +79,13 @@ export const TopMenu = () => {
       </div>
 
       <div className="w-full flex justify-end items-center gap-2">
-        <span>Nome</span>
+        <span>Usuario do Tezton</span>
         <DropdownMenu.Root>
           <DropdownMenu.Trigger>
             <div className="max-w-[45px] max-h-[45px] rounded-full overflow-hidden">
               <img
                 src={
-                  "https://i1.sndcdn.com/artworks-rFvUaGN6YSuME7Aw-MyvseA-t500x500.jpg"
+                  "https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png"
                 }
               />
             </div>
