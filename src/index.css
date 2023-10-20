@@ -41,6 +41,10 @@
   transition: left 1s linear;
 }
 
+.ControlButton button {
+  background: white;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

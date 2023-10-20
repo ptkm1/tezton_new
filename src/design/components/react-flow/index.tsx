@@ -4,6 +4,9 @@ import { Methods } from "./methods";
 export const Board = () => {
   const nodes = [
     {
+      data: {
+        text: "Etapa final",
+      },
       position: {
         x: 251.63649331421135,
         y: 402.41190171321483,
@@ -26,7 +29,7 @@ export const Board = () => {
     },
     {
       data: {
-        text: "Etapa Teste",
+        text: "Etapa Desenho",
       },
       position: {
         x: 431.4199129027572,
@@ -52,13 +55,13 @@ export const Board = () => {
     },
     {
       data: {
-        text: "aweiawjeo",
+        text: "Etapa integração",
         status: "deleted",
         color: "rgb(255, 123, 0)",
       },
       position: {
-        x: 241.73852170518705,
-        y: 399.64004156646195,
+        x: 70.05524196715763,
+        y: 304.33559683250782,
       },
       _id: "64443a5001a0abb2b52717ff",
       type: "custom",
@@ -66,13 +69,13 @@ export const Board = () => {
     },
     {
       data: {
-        text: "Keepo",
+        text: "Etapa 2",
         status: "completed",
         color: "rgb(0, 21, 255)",
       },
       position: {
-        x: 291.4008498544135,
-        y: 446.3366470233382,
+        x: 70.05524196715763,
+        y: 204.33559683250782,
       },
       _id: "6449520ae3b044483795b798",
       type: "custom",
@@ -98,7 +101,7 @@ export const Board = () => {
       nodes={json}
       connectionLineStyle={connectionLineStyle}
     >
-      <Controls />
+      <Controls className="ControlButton" />
       <Background />
     </ReactFlow>
   );
