@@ -1,4 +1,3 @@
-import * as DialogRadix from "@radix-ui/react-dialog";
 import { SubmitHandler, useForm } from "react-hook-form";
 
 type Inputs = {
@@ -20,9 +19,7 @@ export const EditNameCompany = ({ value }: any) => {
         value={value}
         className="w-full h-8 pl-2 rounded border border-default dark:border-defaultdark bg-foreground"
       />
-      <button type="submit">
-        Salvar
-      </button>
+      <button type="submit">Salvar</button>
     </form>
   );
 };

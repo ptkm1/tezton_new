@@ -1,4 +1,5 @@
 import { Dialog } from "../design/components/dialog";
+import { DeleteCompany } from "../design/components/forms/delete-company";
 import { EditNameCompany } from "../design/components/forms/edit-company";
 import { EditLogoCompany } from "../design/components/forms/edit-logo-company";
 
@@ -16,6 +17,12 @@ export const TestScreen = () => {
         description={"Logo da empresa (Cole uma URL)*"}
         Trigger={<button>Editar Logo</button>}
         Content={EditLogoCompany}
+      />
+      <Dialog
+        title={"Deletar Empresa"}
+        description={"Tem certeza que quer deletar essa empresa?"}
+        Trigger={<button>Deletar</button>}
+        Content={DeleteCompany}
       />
     </div>
   );
