@@ -86,9 +86,10 @@ export const Calendar = () => {
                           </div>
                         </div>
                         <div className="flex flex-col w-max p-2 gap-2">
-                          <span className="text-xs">Etapa</span>
+                          <span className="text-xs">Entrega</span>
                           <span className="text-xs text-[gray]">
-                            {delivery.step}
+                            {/* {delivery.step} */}
+                            Comprar Bilhete
                           </span>
                         </div>
                         <div className="flex flex-col w-max p-2 gap-2">

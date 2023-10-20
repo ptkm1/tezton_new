@@ -19,7 +19,7 @@ export const CompanyScreen = () => {
           </div>
         ) : (
           <div className="w-full flex items-center justify-center border-default dark:border-defaultdark bg-foreground dark:bg-darkForeground rounded-md p-2">
-            Selecione alguma funcionalidade
+            Selecione Algum Projeto / Funcionalidade
           </div>
         )}
         <div className="w-full border border-default dark:border-defaultdark bg-foreground dark:bg-darkForeground rounded-sm p-2">
