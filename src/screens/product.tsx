@@ -8,19 +8,22 @@ export const ProductScreen = () => {
   // const { company_id } = useParams();
   const { selectedFeature } = useContext(GlobalContext);
 
-  const teste = [{ id: 1, nome: "fulano", icon: Calendar }];
+  // const teste = [{ id: 1, nome: "fulano", icon: Calendar }];
 
   return (
     <AppTemplate>
       <div className="w-full grid grid-cols-[80%,20%] grid-rows-none gap-4 p-4 justify-between">
         {selectedFeature ? (
           <div className="w-full h-full">
-            {teste.map(({ nome, icon: Icon }) => (
+            {/* {teste.map(({ nome, icon: Icon }) => (
               <div>
                 <Icon />
                 <span>{nome}</span>
               </div>
-            ))}
+            ))} */}
+            <div className="w-full flex items-center justify-center border-default dark:border-defaultdark dark:bg-darkForeground bg-foreground rounded-md p-2">
+            Selecione algum projeto
+          </div>
           </div>
         ) : (
           <div className="w-full flex items-center justify-center border-default dark:border-defaultdark dark:bg-darkForeground bg-foreground rounded-md p-2">
