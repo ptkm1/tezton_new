@@ -2,8 +2,8 @@ import * as DialogRadix from "@radix-ui/react-dialog";
 import { XIcon } from "lucide-react";
 
 export const Dialog = ({
-  title = "Nome do Produto",
-  description = "Descrição do Produto",
+  title = "Adicionar Produto",
+  // description = "Descrição do Produto",
   Trigger,
   Content,
 }: any) => {
@@ -17,7 +17,7 @@ export const Dialog = ({
             {title}
           </DialogRadix.Title>
           <DialogRadix.Description className="mt-[10px] mb-5 text-[15px] leading-normal">
-            {description}
+            {/* {description} */}
           </DialogRadix.Description>
           <Content />
           <DialogRadix.Close asChild>
