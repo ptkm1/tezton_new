@@ -2,8 +2,8 @@ import * as DialogRadix from "@radix-ui/react-dialog";
 import { XIcon } from "lucide-react";
 
 export const Dialog = ({
-  title = "Titulo",
-  description = "Descrição",
+  title = "Nome do Produto",
+  description = "Descrição do Produto",
   Trigger,
   Content,
 }: any) => {
