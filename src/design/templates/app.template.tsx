@@ -12,6 +12,10 @@ import { Dialog } from "../components/dialog";
 import { EditNameCompany } from "../components/forms/edit-company";
 import { SubMenu } from "../components/sub-menu";
 import { TopMenu } from "../components/top-menu";
+import { DeleteCompany } from "../components/forms/delete-company";
+import { EditLogoCompany } from "../components/forms/edit-logo-company";
+import { useContext } from "react";
+import { GlobalContext } from "../../contexts/global-context";
 
 export const AppTemplate = ({ children }: React.PropsWithChildren) => {
   const selectedCompany = useParams();
@@ -19,6 +23,14 @@ export const AppTemplate = ({ children }: React.PropsWithChildren) => {
     (company) => company.company_id === selectedCompany?.company_id
   );
 
+  const {selectedCompany:hoverCompany} = useContext(GlobalContext);
+
+  const FORMS = {
+    edit_company: EditNameCompany,
+    delete_company: DeleteCompany,
+    edit_logo_company: EditLogoCompany
+  };
+   
   function toggleTheme() {
     document.documentElement.classList.toggle("dark");
     console.log(document.documentElement.classList.value);
@@ -52,12 +64,13 @@ export const AppTemplate = ({ children }: React.PropsWithChildren) => {
                 <HomeIcon size={16} />
               </Link>
               <Dialog
+                title={selectedCompany.company_id ? 'Adicionar Produto' : 'Adicionar Empresa' }
                 Trigger={
                   <button className="flex items-center justify-center w-10 h-10 rounded-md hover:bg-[#e6e8eb] dark:hover:bg-[#2f2f2f] dark:text-[gray] overflow-hidden p-1">
                     <PlusCircleIcon size={16} />
                   </button>
                 }
-                Content={EditNameCompany}
+                Content={FORMS['edit_company']}
               />
             </div>
             {findSpecificCompany?.company_products.map((product) => (
@@ -68,9 +81,11 @@ export const AppTemplate = ({ children }: React.PropsWithChildren) => {
                     ? ""
                     : `product/${product.product_id}`
                 }
-                className="flex items-center justify-center w-10 h-10 rounded-md hover:bg-[#e6e8eb] dark:hover:bg-[#2f2f2f] dark:text-[gray] overflow-hidden p-1 group"
+                className="group flex items-center justify-center w-10 h-10 rounded-md hover:bg-[#e6e8eb] dark:hover:bg-[#2f2f2f] dark:text-[gray] overflow-hidden p-1 group"
               >
-                <div className="invisible group-hover:visible absolute text-primary mt-[-30px] ml-[-30px]"></div>
+                <div className="invisible group-hover:visible absolute text-primary mt-[-30px] ml-[-30px]">
+                <EditIcon size={16} />
+                </div>
                 <img src={product.product_logo} alt={product.product_name} />
               </Link>
             )) ||
@@ -78,7 +93,7 @@ export const AppTemplate = ({ children }: React.PropsWithChildren) => {
                 <Link
                   key={company.company_id}
                   to={`company/${company.company_id}`}
-                  className="group flex items-center justify-center w-10 h-10 rounded-md hover:bg-[#e6e8eb] dark:hover:bg-[#2f2f2f] dark:text-[gray] overflow-hidden p-1 group"
+                  className={`group flex items-center justify-center w-10 h-10 rounded-md hover:bg-[#e6e8eb] dark:hover:bg-[#2f2f2f] dark:text-[gray] overflow-hidden p-1 group ${company?.company_id === hoverCompany?.company_id && 'bg-[#e6e8eb]'}`}
                 >
                   <div className="invisible group-hover:visible absolute text-primary mt-[-30px] ml-[-30px]">
                     <DropdownMenu.Root>

@@ -1,11 +1,14 @@
 import { AtomIcon, User2Icon } from "lucide-react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { CardResume } from "../design/components/card-resume";
 import { ResumeCompanies } from "../design/components/resume-companies";
 import { AppTemplate } from "../design/templates/app.template";
+import { GlobalContext } from "../contexts/global-context";
 
 export const HomeScreen = () => {
   const [selectedStatus, setSelectedStatus] = useState<any>(null);
+
+  
 
   const handleSelectStatus = (idx: string) => {
     setSelectedStatus(idx);

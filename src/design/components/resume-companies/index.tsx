@@ -2,12 +2,15 @@ import { MOCK_USER, extractFeatureStatus } from "../../../mocks/user";
 // import { Accordion } from "../accordion";
 import * as Accordion from "@radix-ui/react-accordion";
 import * as Progress from "@radix-ui/react-progress";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { ResumeCompaniesHeader } from "./resume-companies.header";
+import { GlobalContext } from "../../../contexts/global-context";
 
 export const ResumeCompanies = ({ onSelectStatus }: any) => {
   const COMPANIES = MOCK_USER.companies;
+
+  const {setSelectedCompany} = useContext(GlobalContext); 
 
   const productsStatus: any = extractFeatureStatus(MOCK_USER);
   const [progress] = useState(13);
@@ -20,7 +23,10 @@ export const ResumeCompanies = ({ onSelectStatus }: any) => {
             key={company.company_id}
             value={company.company_id + idx}
           >
-            <Accordion.Trigger className="w-full">
+            <Accordion.Trigger 
+            onClick={() => setSelectedCompany(company)}
+            className="w-full"
+            >
               <ResumeCompaniesHeader
                 company_name={company.company_name}
                 company_logo={company.company_logo}

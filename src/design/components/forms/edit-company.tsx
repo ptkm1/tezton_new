@@ -1,7 +1,8 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 
 type Inputs = {
-  nome: string;
+  name: string;
+  type: string;
 };
 
 export const EditNameCompany = ({ value }: any) => {
@@ -15,15 +16,15 @@ export const EditNameCompany = ({ value }: any) => {
     >
       <input
         type="text"
-        placeholder="Nome do Produto"
-        {...register("nome")}
+        placeholder="Nome do Empresa"
+        {...register("name")}
         value={value}
         className="w-full h-8 pl-2 rounded border border-default dark:border-defaultdark bg-foreground"
       />
       <input
         type="text"
-        placeholder="Descrição do Produto"
-        {...register("nome")}
+        placeholder="Tipo da Empresa"
+        {...register("type")}
         value={value}
         className="w-full h-8 pl-2 rounded border border-default dark:border-defaultdark bg-foreground"
       />
